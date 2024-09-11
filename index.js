@@ -169,90 +169,6 @@
 // console.log(x)
 
 
-// let numberOfFilms;
-
-
-
-// function filmCount() {
-//     numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "")
-
-//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-//         numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
-//     }
-// }
-
-// filmCount();
-
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
-
-// function rememberMyFilms() {
-//     for (i = 0; i < 2; i++) {
-//         let a = prompt("Один из последних просмотренных фильмов?", "");
-//         let b = prompt("Как вы его оцените?", "");
-    
-//         if ( a != null && b != null && a != '' && b != '' && a.length < 50) {
-//             personalMovieDB.movies[a] = b;
-//             console.log ('done');
-//         } else {
-//             console.log ('Error');
-//             i--;
-//         }
-//     }
-// }
-
-// rememberMyFilms();
-
-// function detectPersonalLevel() {
-//     if (personalMovieDB.count < 10) {
-//         console.log ('Просмотрено мало фильмов');
-//     } else if (10 <= personalMovieDB.count <= 30) {
-//         console.log ('Вы классический зритель');
-//     } else if (30 < personalMovieDB.count) {
-//         console.log ('Вы - КИНОМАН');
-//     } else {
-//         console.log ('Произошла ошибка');
-//     }
-// }
-
-// detectPersonalLevel();
-
-// function showMyDB() {
-//     if (personalMovieDB.privat == false) {
-//         console.log(personalMovieDB);
-//     }
-// }
-
-// showMyDB();
-
-// detectPersonalLevel();
-
-// function writeYourGenres() {
-//    for (i = 1; i < 4; i++){
-//     let genresUnswer = prompt(`Ваш любимый жанр под номером ${i}?`, '');
-
-//     personalMovieDB.genres[i - 1] = genresUnswer; 
-    
-//     // personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}?`, ''); --- альтернатива
-//    }
-// }
-
-// writeYourGenres();
-// console.log(personalMovieDB)
-
-// function filmCount() {
-//     numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "")
-
-//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-//         numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
-//     }
-// }
-
 // function calculateVolumeAndArea(num) {
 //     let obm;
 //     let sqr;
@@ -462,4 +378,244 @@
 // }
 
 // availableCurr([...baseCurrencies,...additionalCurrencies], 'CNY')
+
+
+// const personalMovieDB = {
+//     count: 0,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+//     filmCount: function() {
+//         personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "")
+    
+//         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+//             personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
+//         }
+//     },
+//     rememberMyFilms: function() {
+//         for (i = 0; i < 2; i++) {
+//             let a = prompt("Один из последних просмотренных фильмов?", "");
+//             let b = prompt("Как вы его оцените?", "");
+        
+//             if ( a != null && b != null && a != '' && b != '' && a.length < 50) {
+//                 personalMovieDB.movies[a] = b;
+//                 console.log ('done');
+//             } else {
+//                 console.log ('Error');
+//                 i--;
+//             }
+//         }
+//     },
+//     detectPersonalLevel: function() {
+//         if (personalMovieDB.count < 10) {
+//             console.log ('Просмотрено мало фильмов');
+//         } else if (10 <= personalMovieDB.count <= 30) {
+//             console.log ('Вы классический зритель');
+//         } else if (30 < personalMovieDB.count) {
+//             console.log ('Вы - КИНОМАН');
+//         } else {
+//             console.log ('Произошла ошибка');
+//         }
+//     },
+//     showMyDB: function() {
+//         if (personalMovieDB.privat == false) {
+//             console.log(personalMovieDB);
+//         }
+//     },
+//     toggleVisibleMyDB: function() {
+//         if (personalMovieDB.privat) {
+//             personalMovieDB.privat = false;
+//         } else {
+//             personalMovieDB.privat = true;
+//         }
+//     },
+//     writeYourGenres: function() {
+//         for (i = 1; i < 4; i++){
+//          let genresUnswer = prompt(`Ваш любимый жанр под номером ${i}?`, '');
+
+//             if (genresUnswer == null ||  genresUnswer === '') {
+//                 console.log("Вы ввели некоректные данные или не ввели данные");
+//                 i--;
+//             } else {personalMovieDB.genres[i - 1] = genresUnswer; };
+         
+//          };
+//          personalMovieDB.genres.forEach( function(item, index) {
+//             console.log(`Любимый жанр #${index + 1} - это ${item}`)
+//          })
+         
+//          // personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}?`, ''); --- альтернатива
+        
+//      },     
+    
+// };
+
+// Задача:
+// У вас есть небольшой кусочек данных о торговом центре, которые записаны в объекте shoppingMallData. Они содержат массив с данными о магазинах, где указана длина и ширина помещения; высоту помещения; стоимость отопления за 1 кубический метр и бюджет на оплату отопления за месяц.
+// Основная задача - это написать функцию isBudgetEnough, которая буде возвращать строку. Если бюджета хватает для отопления всего объема торгового центра - выводится 'Бюджета достаточно', если нет - 'Бюджета недостаточно'. И все 🙂
+// Но эта задача содержит несколько подзадач внутри:
+// - вычисление общей площади всех магазинов, которая вычисляется как длина магазина, умноженная на его ширину;
+// - вычисление общего объема торгового центра, так как цена отопления указана в кубических метрах;
+// - определение того, хватает ли бюджета на оплату такого объема;
+// - все числа идут без единиц измерения для упрощения, просто цифры и все;
+// - функция должна продолжать работать, даже если изменяется количество магазинов, высота, бюджет или подставляется вообще другой объект.
+
+// const shoppingMallData = {
+//     shops: [
+//         {
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000
+// }
+
+// function isBudgetEnough(data) {
+
+//     let sqrAllShops = 0;
+
+//     for (let i of data.shops) {
+//         let sqrShop = i.width*i.length*data.height;
+//         sqrAllShops += sqrShop;  
+//     };
+    
+
+//     if (sqrAllShops*shoppingMallData.moneyPer1m3 <= shoppingMallData.budget) {
+//         return 'Бюджета достаточно'
+//     } else {
+//         return 'Бюджета недостаточно'
+//     }
+
+// };
+
+// isBudgetEnough(shoppingMallData);
+
+
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam','Sem'];
+
+// function sortStudentsByGroups(arr) {
+//     arr.sort();
+//     const a = [], b = [], c = [], rest = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i < 3) {
+//             a.push(arr[i]);
+//         } else if (i < 6) {
+//             b.push(arr[i]);
+//         } else if (i < 9) {
+//             c.push(arr[i]);
+//         } else {
+//             rest.push(arr[i]);
+//         }
+//     }
+//     console.log([a,b,c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`]) 
+// }
+
+// sortStudentsByGroups(students);
+
+// function createCounter() {
+// let counter = 0
+//   const myFunction = function() {
+//    counter = counter + 1
+//     return counter
+//      }
+//     return myFunction
+// }
+//  const increment = createCounter()
+//  const c1 = increment()
+//  const c2 = increment()
+//  const c3 = increment()
+//  console.log('example increment', c1, c2, c3)
+
+//  function makeCounter() {
+//     let count = 0;
+  
+//      const xxx = function () {
+//       return count++; // есть доступ к внешней переменной "count"
+//     };
+
+//     return xxx;
+//   } 
+//   let counter = makeCounter(); 
+//   console.log( counter() ); // 0
+//   console.log( counter() ); // 1
+//   console.log( counter() ); // 2
+
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
+        }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
+
+function isOpen(prop) {
+    let answer = '';
+    prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+    return answer;
+}
+
+console.log(isOpen(restorantData.openNow))
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    if ((parseFloat(fDish.price) + parseFloat(sDish.price)) < parseFloat(average)) {
+        return 'Цена ниже средней';
+    } else {
+        return 'Цена выше средней';
+    }
+}
+
+console.log(isAverageLunchPriceTrue(restorantData.menu[1], restorantData.menu[1], restorantData.averageLunchPrice));
+
+function transferWaitors(data) {
+    let copy = JSON.parse(JSON.stringify(data))
+    // const copy = Object.assign({}, data);
+
+    copy.waitors[0] = {name: 'Mike', age: 32};
+    return copy;
+}
+
+console.log(transferWaitors(restorantData));
+console.log(restorantData);
+
+
+
+  
+
+
+
+
 
