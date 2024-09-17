@@ -720,6 +720,35 @@
 
 // console.log(result[0] / result[1])
 
+// function deepCount(a){
+//     let sum = a.length;
+//     for ( i = 0; i < a.length; i++) {
+//         if (Array.isArray(a[i])) {}
+//             sum += deepCount(a[i]);
+    
+//     }
+//     console.log(sum);
+// }
+// deepCount([2, 5, 4, [2, 6]]);
+
+// // function deepCount(a){
+// //     let count = a.length;
+// //     for (let i=0; i < a.length; i++) {
+// //         if (Array.isArray(a[i])) {
+// //             count += deepCount(a[i]);
+// //         }
+// //     };
+// //     return count;
+// // }
+
+// console.log(deepCount(["1", 5, ["3", [3, [6, 6], 5]], ["10"]]))
+// -----------------------------------------------------------------------------------------------
+
+// let sum = 0;
+// a.forEach((item, i) => {
+
+// })
+
 // function pow (x, n) {
 //     if (n === 1) {
 //         return x
@@ -743,3 +772,45 @@
 // }
 
 // console.log(factorial(0));
+
+// let n = 0;
+// function amountOfPages(summary){
+//     let arr = [];
+//     let res = '';
+    
+//     for (let i = 1; i <= summary; i++) {
+//         arr.push(i);   
+//     };
+
+//     const newArr = arr.map(String);
+
+//     for (i = 0; i < arr.length; i++){
+        
+//         res += newArr[i];
+
+//         if (res.length == summary){
+//             n = (i+1);
+//         }
+//     }
+    
+//     return n
+// }
+
+// amountOfPages(25)
+// console.log(n)
+
+
+// function isPangram(string) {
+
+// const arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+// const setArr = new Set(arr);
+
+// let newStr = string.toLowerCase().split('').sort().join('').trim().split('');
+
+// const setStr = new Set(newStr);
+// let nnstr =  Array.from(new Set(setStr));
+
+// // if (nnstr.length == 26) console.log(true) ;
+// console.log(nnstr.length == 26)
+// };
+// isPangram('The quick brown fox jumps over the lazy dog')
